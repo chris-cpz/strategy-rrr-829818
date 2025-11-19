@@ -8,8 +8,8 @@ import sys
 from cpz.clients.sync import CPZClient
 
 # --- Set credentials ---
-os.environ["CPZ_AI_API_KEY"] = "cpz_key_XYZ"
-os.environ["CPZ_AI_SECRET_KEY"] = "cpz_secret_XYZ"
+os.environ["CPZ_AI_API_KEY"] = "cpz_key_bf3c8eb1ab534c0a9c11e04b"
+os.environ["CPZ_AI_SECRET_KEY"] = "cpz_secret_12273y2v514f53382n1r163m1i2u1i6j5n5i64492p235h2a"
 os.environ["CPZ_STRATEGY_ID"] = "strategy_ID_XYZ"
 
 # --- Direct argument values ---
