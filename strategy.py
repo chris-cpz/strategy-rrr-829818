@@ -1,37 +1,25 @@
-print(1)
-
-#!/usr/bin/env python3
-# Place a single KO market buy order using CPZ AI keys from environment.
-
 import os
 import sys
 from cpz.clients.sync import CPZClient
 
 # --- Set credentials ---
-os.environ["CPZ_AI_API_KEY"] = "cpz_key_bf3c8eb1ab534c0a9c11e04b"
-os.environ["CPZ_AI_SECRET_KEY"] = "cpz_secret_12273y2v514f53382n1r163m1i2u1i6j5n5i64492p235h2a"
+os.environ["CPZ_AI_API_KEY"] = "cpz_key_882a2fb5a3274d54b600bac6"
+os.environ["CPZ_AI_SECRET_KEY"] = "cpz_secret_46133v3n495s1s2nc342h577725e2f2w1t5s1g252u43m3c1"
 os.environ["CPZ_STRATEGY_ID"] = "13197d7e-22b4-4b62-9d44-58b901a359c7"
 
 # --- Direct argument values ---
 qty = 1
 strategy_id = os.getenv("CPZ_STRATEGY_ID")
-env = "paper"         # choose "paper" or "live"
+env = "live"         # choose "paper" or "live"
 broker = "alpaca"     # choose broker name
-# --- Validation ---
-if not os.getenv("CPZ_AI_API_KEY") or not os.getenv("CPZ_AI_SECRET_KEY"):
-    print("CPZ_AI_API_KEY and CPZ_AI_SECRET_KEY must be set in environment", file=sys.stderr)
-    sys.exit(2)
 
-if not strategy_id:
-    print("--strategy-id (or CPZ_STRATEGY_ID) is required", file=sys.stderr)
-    sys.exit(2)
 
 # --- Execute order ---
 client = CPZClient()
-client.execution.use_broker(broker, account_id="account_ID")
+client.execution.use_broker(broker, environment="live", account_id="899921312")
 
 order = client.execution.order(
-    symbol="KO",
+    symbol="GPRO",
     qty=qty,
     side="buy",
     order_type="market",
